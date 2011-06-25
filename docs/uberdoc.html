@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8" content="text/html" http-equiv="Content-Type" /><meta content="Enables the evaluation of forms in strings." name="description" /><style type="text/css">/**
+<html><head><meta charset="utf-8" content="text/html" http-equiv="Content-Type" /><meta content="binding-str allows you to specify binding variables directly inside
+a string." name="description" /><style type="text/css">/**
  * SyntaxHighlighter
  * http://alexgorbatchev.com/SyntaxHighlighter
  *
@@ -2526,17 +2527,18 @@ $(document).ready(function() {
     ul.css('margin-top', '0px')
 
 })
-</script><title>de.herr-norbert/binding-str -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name">de.herr-norbert/binding-str</h1><h2 class="project-version">0.0.1</h2><br /><p>Enables the evaluation of forms in strings.</p>
+</script><title>de.herr-norbert/binding-str -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name">de.herr-norbert/binding-str</h1><h2 class="project-version">0.0.1</h2><br /><p>binding-str allows you to specify binding variables directly inside
+a string.</p>
 </div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.2.1</td></tr></table></div><div class="dependencies"><h3>dev dependencies</h3><table><tr><td class="dep-name">marginalia</td><td class="dotted"><hr /></td><td class="dep-version">0.5.1</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#de.herr-norbert.binding-str.core">de.herr-norbert.binding-str.core</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#de.herr-norbert.binding-str.core" name="de.herr-norbert.binding-str.core"><h1 class="project-name">de.herr-norbert.binding-str.core</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs"><p><code>binding-str</code> supports the evaluation of bindings inside strings.</p>
 </td><td class="codes" /><pre class="brush: clojure">(ns de.herr-norbert.binding-str.core)</pre></tr><tr><td class="docs"><p>This regular expression defines the binding syntax. Bindings can be
 accessed via <code>`(name-of-binding)</code></p>
 </td><td class="codes" /><pre class="brush: clojure">(def ^{:dynamic true} *regex-matcher* #&quot;(.*)`\((.*)\)(.*)&quot;)</pre></tr><tr><td class="docs"><p><code>binding-str</code> allows you to specify binding variables directly inside
-   a string. During the evaluation of the binding-str macro the
+   a string. During the evaluation of the <code>binding-str</code> macro the
    variables get replaced with the actual content. If the binding can
    not be found a compile error will be thrown.</p>
 
 <p>   The format of the binding specification is currently based on the
-   quoting syntax of Clojure, here is a little example:</p>
+   quoting syntax of lojure, here is a little example:</p>
 
 <pre><code>  de.herr-norbert.binding-str.core&gt;
      (let [name "World"]
